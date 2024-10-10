@@ -1,0 +1,55 @@
+package com.dh.ClinicaOdontologicaII.entities;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "Dentists")
+public class Dentist {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "dentist_id")
+    private Integer id;
+    private Integer registration;
+    private String name;
+    private String lastName;
+
+    // Constructor vacio - por defecto
+    public Dentist() {
+    }
+
+    // GETTER Y SETTER
+
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getRegistration() {
+        return registration;
+    }
+
+    public void setRegistration(Integer registration) {
+        this.registration = registration;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+}
