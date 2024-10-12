@@ -10,8 +10,14 @@ public class Dentist {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "dentist_id")
     private Integer id;
+
+    @Column(name = "registration")
     private Integer registration;
+
+    @Column(name = "name", nullable = false)
     private String name;
+
+    @Column(name = "lastname", nullable = false)
     private String lastName;
 
     // Constructor vacio - por defecto

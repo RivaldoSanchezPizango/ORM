@@ -12,9 +12,17 @@ public class Patient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "patient_id")
     private Integer id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "last_name")
     private String lastName;
+
+    @Column(name = "card_identity")
     private String cardIdentity;
+
+    @Column(name = "admission_of_date")
     private LocalDate admissionOfDate;
 
     // constructor por defecto sin atributos
