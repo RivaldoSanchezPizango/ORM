@@ -42,4 +42,29 @@ public class PatientController {
             return patient;
         }
     }
+
+    // Consultarpaciente por ID
+    @GetMapping ("/id")
+    public Patient findById(@RequestParam Integer id) {
+        Optional<Patient> optionalPatient = patientService.findById(id);
+        if (optionalPatient.isPresent()) {
+            return optionalPatient.get();
+        } else {
+            return null;
+        }
+    }
+
+
+    // Elimina paciente por ID
+    @DeleteMapping("/delete/{id}")
+    public String delete (@PathVariable Integer id) {
+        Optional<Patient> patientWanted = patientService.findById(id);
+        if (patientWanted.isPresent()) {
+            patientService.delete(id);
+            return "Se elimino el paciente con ID: " + id;
+        } else {
+            return "No se encontro el paciente con ID: " + id;
+        }
+    }
+
 }
