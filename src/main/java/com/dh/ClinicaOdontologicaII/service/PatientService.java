@@ -38,4 +38,12 @@ public class PatientService {
         return repository.findAll();
     }
 
+    public Optional<Patient> findByLastname(String lastname) {
+        return repository.findByLastName(lastname);
+    }
+
+    public Optional<Patient> findByName(String name) {
+        return  repository.findByName(name);
+    }
+
 }
